@@ -21,13 +21,23 @@ class BooksApp extends Component {
     })
   }
 
+//   moveBook(book, toShelf) {
+//    BooksAPI.getAll().then((data) => {
+//       BooksAPI.update(book, toShelf).then(
+//         this.setState((state) => ({
+//           books: state.books.filter((b) => b.id !== book.id).concat([book])
+//         }))
+//       )
+//     })
+//   }
+  
   moveBook(book, toShelf) {
-   BooksAPI.getAll().then((data) => {
-      BooksAPI.update(book, toShelf).then(
-        this.setState((state) => ({
-          books: state.books.filter((b) => b.id !== book.id).concat([book])
-        }))
-      )
+    BooksAPI.update(book, toShelf).then(response => {
+      // make sure you set the shelf!
+      book.shelf = toShelf  
+      this.setState((state) => ({
+        books: state.books.filter(b => b.id !== book.id).concat([book])
+      }))
     })
   }
 
