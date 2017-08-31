@@ -23,16 +23,6 @@ class BooksApp extends Component {
 
   moveBook(book, toShelf) {
    BooksAPI.getAll().then((data) => {
-    //   BooksAPI.update(book, toShelf).then((bookId) => {
-    //     this.setState((prevState) => {
-    //       return { books: prevState.books.map((findBook) => {
-    //         if(book.id === findBook.id) {
-    //           findBook.shelf = toShelf
-    //         }
-    //         return findBook;
-    //       })}
-    //     })
-    //   });
       BooksAPI.update(book, toShelf).then(
         this.setState((state) => ({
           books: state.books.filter((b) => b.id !== book.id).concat([book])
