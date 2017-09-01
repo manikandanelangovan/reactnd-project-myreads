@@ -10,7 +10,7 @@ class Book extends Component {
 
     moveBookData(moveToShelf) {
         const move = this.props.moves;
-        move(this.props, moveToShelf);
+        move(this.props.book, moveToShelf);
     }
 
     render() {
