@@ -15,11 +15,7 @@ class ShelfChanger extends Component {
         this.props.moves(e.target.value)
     }
 
-    render() {
-      const getShelf = (books, id) => {
-        const book = books.find(b => b.id === id)
-        return (book && book.shelf) ? book.shelf : 'none'
-      }
+    render() {      
         const OPTIONS = [
             {'caption': 'Move To...', 'value': 'none', 'status': 'disabled'},
             {'caption': 'Currently Reading', 'value': 'currentlyReading', 'status': 'enabled'},
