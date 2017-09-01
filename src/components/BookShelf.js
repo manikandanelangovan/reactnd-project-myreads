@@ -22,13 +22,13 @@ class BookShelf extends Component {
     }
 
     render() {
-        console.log(books);
+        console.log(this.props.books);
         return (
             <section>
                 <h2 className="bookshelf-title">{this.props.headerTitle}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {this.generateBooks(books)}
+                        {this.generateBooks(this.props.books)}
                     </ol>
                 </div>
             </section>
