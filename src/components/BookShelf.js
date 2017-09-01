@@ -12,24 +12,24 @@ class BookShelf extends Component {
         if(data === "undefined")
             return console.log('Data is undefined');
 
+        // ret
         return data.map(bookData => <Book
             moves={this.props.moves}
-            bookTitle={bookData.title}
-            bookAuthor={bookData.authors}
-            bookShelf={bookData.shelf}
-            bookCover={bookData.url || bookData.imageLinks.thumbnail}
+            book={bookData}
             key={bookData.id}
             id={bookData.id}
         />)
     }
 
     render() {
+        const books = this.props.books;
+        console.log(books);
         return (
             <section>
                 <h2 className="bookshelf-title">{this.props.headerTitle}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {this.generateBooks(this.props.books)}
+                        {this.generateBooks(books)}
                     </ol>
                 </div>
             </section>
