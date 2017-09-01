@@ -22,7 +22,6 @@ class BookShelf extends Component {
     }
 
     render() {
-        const books = this.props.books;
         console.log(books);
         return (
             <section>
