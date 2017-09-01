@@ -13,8 +13,7 @@ class Book extends Component {
         move(this.props.book, moveToShelf);
     }
 
-    render() {
-        const {book} = this.props.book
+    render() {        
         return (
               <li>
                 <div className="book">
